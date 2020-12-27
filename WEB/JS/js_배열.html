@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+</head>
+
+<body>
+
+
+    <!--바디태그의 아래쪽에 JS script-->
+    <!-- <h3>배열 만들기</h3> -->
+    <script>
+        // var student = ['<h1>'+"홍길동","김유신"+'</h1>',"이순신"];
+        // document.write('<h1>'+student+'</h1>'+'<br>');
+        // document.write(student+'<br>');
+        // console.log(student.length);
+
+        //========================================================
+
+        // function calRemainLife(x) {
+        //     var day = (90 - x) * 365;
+        //     var week = (90 - x) * 52;
+        //     var month = (90 - x) * 12;
+        //     // return day+"일 ,"+week+"주 ,"+month+"달 남았습니다."
+        //     return `${day}일 , ${week}주 , ${month}달 남았습니다.`
+        // }
+
+        //========================================================
+
+        // 익명함수
+        // var pt = function () {
+        //     var num = prompt('숫자를 입력', '0');
+        //     alert(Number(num) + 10);
+        // };
+        // console.log(typeof (pt));
+        // pt();
+
+        //========================================================
+
+        // 콜백 함수 (함수를 매개변수로 전달하는 함수)(yes(),no())
+        // function ask(question, yes, no) {
+        //     if (confirm(question)) yes() //confirm("표시할문구")는 Boolean 타입을 반환 
+        //     else no();                  //확인을 누르면 true반환 취소를 누르면 false 반환
+        // }
+        // function agree() {
+        //     alert("동의 했습니다.");
+        // }
+        // function cancle() {
+        //     alert("취소 했습니다.");
+        // }
+        // // ask콜백 함수의 매개변수에 agree()함수와 cancle()함수를 넣음
+        // ask("동의하세요?", agree, cancle);
+
+        //========================================================
+
+        // //콜백함수 예제
+        // function add(n1, n2) {
+        //     return n1 + n2;
+        // }
+        // function multiply(n1, n2) {
+        //     return n1 * n2;
+        // }
+        // // alert(add(10, 10));
+        // // alert(multiply(10, 10));
+        // // 오퍼레이터를 콜백함수로 지정하고 안속에 매개변수 n1,n2를 넣음
+        // function calculator(n1, n2, operator) {
+        //     return operator(n1, n2);
+        // }
+        // alert(calculator(10, 10, add));
+        // alert(calculator(10, 10, multiply));
+
+        //========================================================
+
+        // // 타이머 함수
+        // // 매개변수 콜백함수에 들어갈 함수 지정
+        // function seconds() {
+        //     alert('3초 후 한번 실행');
+        // }
+        // // 변수에 setTimeout을 넣음 타이머를 중지하기 위해 사용됨
+        // var setTimeoutID = setTimeout(seconds, 3000); //콜백 함수, 3초 후에 한번 실행
+        // clearTimeout(setTimeoutID); // 클리어타임아웃에 변수를 넣어 일정시간 후 한번실행 하는 것을 중지시켰음
+
+        // // 매개변수 콜백함수에 들어갈 함수 지정
+        // function massage() {
+        //     alert('5초 간격으로 반복 실행')
+        // }
+
+        // // 변수에 setInterval을 넣음 타이머를 중지하기 위해 사용됨
+        // var intervalID = setInterval(massage, 5000);//콜백 함수,5초 간격으로 반복 실행
+        // // clearInterval(intervalID);// 클리어인터벨에 변수를 넣음 일정 시간 간격으로 반복실행을 중지 시킴
+
+
+        // //셋타임아웃 매개변수안에 익명함수로 클리어인터벨(사용할 변수)를 넣고, 10초후 실행시킴
+        // setTimeout(function () {
+        //     clearInterval(intervalID);
+        // }, 10000); // 실행결과: 익명 콜백함수 클리어인터벨(사용할 변수)가 10초후에 한번 실행되기 때문에 위에 반복실행 시킨 함수가 10초뒤 중지
+
+        //========================================================
+
+        //배열.map() , 배열.filter()
+        alert("콘솔로그 확인");
+        // 배열 생성
+        var pets = [
+            { 이름: "덱스터", 종류: "고양이", 나이: 2 },//0번째 인덱스의 객체
+            { 이름: "스텔라", 종류: "고양이", 나이: 3 },//1번째 인덱스의 객체
+            { 이름: "헨리", 종류: "강아지", 나이: 1 }//2번째 인덱스의 객체
+        ]
+        console.log(pets);
+
+        //콘솔로그로 새로운 pets의 아이템 갱스터를 입력 (객체추가)    
+        pets.push({ 이름: "갱스터", 종류: "강아지", 나이: 5 });
+        console.log(pets);
+        //console.log(pets.push({이름:"갱스터",종류:"강아지", 나이:5})) 콘솔 로그에 바로 추가하는 방법
+
+        // 배열.map() (배열에 있는 객체를 하나하나 실행시킴)
+        function nameOnly(x) {
+            return x.이름; // 객체.데이터를 찾아가서 반환
+        }
+        console.log(pets.map(nameOnly)); // map()에 콜백함수가 들어감
+        let names = pets.map(nameOnly); // 변수에 넣음
+
+        // 배열.filter() (boolean으로 반환해서 배열속 객체들을 보여줌)
+        function onlyDogs(x) {
+            return x.종류 == "강아지"; // 고양이는 false가되어 걸러짐
+        }
+        console.log(pets.filter(onlyDogs)); // filter()에 콜백함수가 들어감 (종류에 강아지가 들어간 객체들만 보여줌)
+        var dogs = pets.filter(onlyDogs); // 변수에 넣음
+
+        // 배열.filter() (boolean으로 반환해서 배열속 객체들을 보여줌)
+        function onlyBaby(x) {
+            return x.나이 <= 2; // 나이가 2보다 크면 false가되어 걸러짐
+        }
+        console.log(pets.filter(onlyBaby)); // filter()에 콜백함수가 들어감 (나이가 2이하의 객체들만 보여줌)
+        var babys = pets.filter(onlyBaby); // 변수에 넣음
+
+        // 2살이하의 강아지 이름을 출력
+        console.log(pets.filter(onlyBaby).filter(onlyDogs).map(nameOnly)); //콘솔에 바로 출력
+        var babyDogName = pets.filter(onlyBaby).filter(onlyDogs).map(nameOnly);
+        console.log(babyDogName); // 변수에 넣어서 콘솔에 출력
+
+    </script>
+    <!-- <script src="app.js"></script> -->
+</body>
+
+</html>

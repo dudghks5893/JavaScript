@@ -37,7 +37,7 @@
             <a href="categories.html" class="nav-link">카테고리</a>
           </li>
           <li class="nav-item px-2">
-            <a href="users.html" class="nav-link active">유저</a>
+            <a href="users.html" class="nav-link">유저</a>
           </li>
         </ul>
         <!-- 오른쪽 메뉴 -->
@@ -69,114 +69,79 @@
   </nav>
   <!-- 최 상단 검은 네브바 끝-->
   <!-- HEADER 시작-->
-  <header id="main-header" class="py-2 bg-warning text-white">
+  <header id="main-header" class="py-2 bg-primary text-white">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1><i class="fas fa-user"></i> Users</h1>
+          <h1><i class="fas fa-cog"></i> Settings</h1>
         </div>
       </div>
     </div>
   </header>
   <!-- HEADER 끝-->
-  <!-- SEARCH 시작 -->
-  <section id="search" class="py-4 mb-4 bg-light">
+  <!-- ACTIONS -->
+  <section id="actions" class="py-4 mb-4 bg-light">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 ml-auto">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="유저 찾기..." />
-            <div class="input-group-append">
-              <button class="btn btn-primary px-4">Search</button>
-            </div>
-          </div>
+        <div class="col-md-3">
+          <a href="index.html" class="btn btn-light btn-block">
+            <i class="fas fa-arrow-left"></i> 돌아가기
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="index.html" class="btn btn-success btn-block">
+            <i class="fas fa-check"></i> 저장하기
+          </a>
         </div>
       </div>
     </div>
   </section>
-  <!-- SEARCH 끝 -->
+  <!-- actions 끝 -->
 
-  <!-- POSTS -->
-  <section id="posts">
+  <!-- SETTINGS -->
+  <section id="settings">
     <div class="container">
       <div class="row">
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <h4>최근 유저</h4>
+              <h4>수정하기</h4>
             </div>
-            <table class="table table-striped">
-              <thead class="thead-dark">
-                <tr>
-                  <th>#</th>
-                  <th>이름</th>
-                  <th>이메일</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>홍길동</td>
-                  <td>hong@naver.com</td>
-                  <td>
-                    <a href="details.html" class="btn btn-secondary">
-                      <i class="fas fa-angle-double-right"></i> 열기
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>김유신</td>
-                  <td>kimusin@naver.com</td>
-                  <td>
-                    <a href="details.html" class="btn btn-secondary">
-                      <i class="fas fa-angle-double-right"></i> 열기
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>강감찬</td>
-                  <td>kang@naver.com</td>
-                  <td>
-                    <a href="details.html" class="btn btn-secondary">
-                      <i class="fas fa-angle-double-right"></i> 열기
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>장보고</td>
-                  <td>jang@gmail.com</td>
-                  <td>
-                    <a href="details.html" class="btn btn-secondary">
-                      <i class="fas fa-angle-double-right"></i> 열기
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- 페이지네이션 -->
-            <nav class="ml-4">
-              <ul class="pagination">
-                <li class="page-item disabled">
-                  <a href="" class="page-link">이전</a>
-                </li>
-                <li class="page-item active">
-                  <a href="" class="page-link">1</a>
-                </li>
-                <li class="page-item">
-                  <a href="" class="page-link">2</a>
-                </li>
-                <li class="page-item">
-                  <a href="" class="page-link">3</a>
-                </li>
-                <li class="page-item">
-                  <a href="" class="page-link">다음</a>
-                </li>
-              </ul>
-            </nav>
+            <div class="card-body">
+              <form>
+                <fieldset class="form-group">
+                  <legend>회원 가입 허용</legend>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" name="check-1" class="form-check-input" value="Yes" checked />
+                      Yes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" name="check-1" class="form-check-input" value="No" />
+                      No
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                  <legend>홈페이지 포맷</legend>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" name="check-2" class="form-check-input" value="posts" checked />
+                      Blog Page
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" name="check-2" class="form-check-input" value="page" />
+                      Homepage
+                    </label>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -189,9 +154,8 @@
       <div class="row">
         <div class="col">
           <p class="lead text-center">
-            Copyright &copy;
+            Dashboard &copy;
             <span id="year"></span>
-            대시보드
           </p>
         </div>
       </div>
@@ -203,8 +167,10 @@
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+
   <script>
-      // 자바스크립트 코드 작성
+    // 현재 년도를 가져옴
+    $("#year").text(new Date().getFullYear());
   </script>
 </body>
 
